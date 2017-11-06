@@ -23,7 +23,7 @@ let repoCounter = 0;
 const pingRepo = (index) => {
     console.log("Pinging", repos[repoCounter]);
     travisPing.ping(
-        { github_token: process.end.GITHUB_ACCESS_TOKEN },
+        { github_token: process.env.GITHUB_ACCESS_TOKEN },
         repos[repoCounter],
         { branch: 'master' },
         (travisResponse) => {
