@@ -14,9 +14,7 @@ const repos = [
     "unitejs-test/react-javascript",
     "unitejs-test/react-typescript",
     "unitejs-test/vue-javascript",
-    "unitejs-test/vue-typescript",
-    "unitejs-examples/docker-quickstart",
-    "unitejs-examples/electron-quickstart"
+    "unitejs-test/vue-typescript"
 ];
 
 let repoCounter = 0;
