@@ -27,14 +27,14 @@ const pingRepo = (index) => {
         repos[repoCounter],
         { branch: 'master' },
         (travisResponse) => {
-            if (!travisResponse || JSON.stringify(travisResponse).indexOf("currently can not be restarted") > 0) {
-                console.log("Completed Successfully");
-                repoCounter++;
-                if (repoCounter < repos.length) {
-                    setTimeout(() => pingRepo(repoCounter), 1000);
-                }
+            if (travisResponse) {
+                console.log(JSON.stringify(travisResponse))
             } else {
-                console.log(travisResponse)
+                console.log("Completed Successfully");
+            }
+            repoCounter++;
+            if (repoCounter < repos.length) {
+                setTimeout(() => pingRepo(repoCounter), 10000);
             }
         }
     )
